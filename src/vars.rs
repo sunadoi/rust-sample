@@ -47,4 +47,25 @@ pub fn run() {
   let a1 = [1, 2, 3, 4, 5];
   let a2 = [0; 10];
   println!("{:?} {:?} {} {}", a1, a2, a1[2], a1[3]);
+
+  // 文字列スライス
+  let s1 = "Helloこんにちは挨拶"; // 26bytes
+  let s2 = "hello";
+  println!("Stack address of s1 is: {:p}", &s1);
+  println!("Stack address of s2 is: {:p}", &s2);
+  // 16bytes分離れたところに格納されている → 実データがstackに保存されているわけではない
+  // 実データは静的領域に格納されている。8ytesでそのアドレス、残り8bytesでその長さを規定して格納している
+  println!("Static memory address of s1 is: {:?}", s1.as_ptr());
+  println!("Static memory address of s2 is: {:?}", s2.as_ptr());
+  println!("Len of s1 is: {:?}", s1.len());
+  println!("Len of s2 is: {:?}", s2.len());
+
+  // string型
+  let mut s1 = String::from("hello");
+  let mut s2 = String::from("helloworld");
+  println!("Stack address of s1 is: {:p}", &s1);
+  println!("Stack address of s2 is: {:p}", &s2);
+  // 24bytes離れている。実データはHeapに格納されている。
+  // 16bytesまでは文字列スライスと同じ。残りの8bytesがcapで可変長分。
+  // ただし文字列スライスの場合は最初の8bytesは「参照」、stringの場合は「所有」
 }
