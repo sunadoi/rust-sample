@@ -61,7 +61,7 @@ pub fn run() {
   let r1 = &mut s11;
   // println!("{}", s11); // mutableなr1が有効な範囲ではたとえもとの所有権の持ち主のs11でもここでは呼び出せない。r1がimutableならok
   println!("{}", r1);
-  println!("{}", s11); // ここならmutableなr1は有効ではないためs11が呼び出せる
+  println!("{}", s11); // ここならmutableなr1は有効ではない(r1のライフタイムが終わっている)ためs11が呼び出せる
 }
 
 fn take_ownership(s: String) {
