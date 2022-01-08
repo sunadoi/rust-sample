@@ -6,7 +6,8 @@
 // mod structs;
 // mod enums;
 // mod traits;
-mod error_handling;
+// mod error_handling;
+mod unit_test;
 
 fn main() {
   // println!("Hello, world!");
@@ -18,7 +19,7 @@ fn main() {
   // structs::run();
   // enums::run();
   // traits::run();
-  error_handling::run();
+  // error_handling::run();
   // vars::sub_a::func_a();
   // vars::sub_b::func_b();
 }
