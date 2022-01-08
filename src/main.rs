@@ -8,6 +8,7 @@
 // mod traits;
 // mod error_handling;
 mod unit_test;
+extern crate rust_library_sample;
 
 fn main() {
   // println!("Hello, world!");
@@ -22,4 +23,5 @@ fn main() {
   // error_handling::run();
   // vars::sub_a::func_a();
   // vars::sub_b::func_b();
+  rust_library_sample::print_random_number();
 }
